@@ -112,8 +112,10 @@
 //  cases its n because of collision    so then use map instead , map has logn
 
 
-selection sort O(n*n)  sabse chota ko selecto karo  aur sabse pahle dalo .....
+// selection sort O(n*n)  sabse chota ko selecto karo  aur sabse pahle dalo .....
 
-bubble sort O(n*n) but in best case O(n)  jo sabse bada hoga wo last me chala jayega
+// bubble sort O(n*n) but in best case O(n)  jo sabse bada hoga wo last me chala jayega
 
-insertion sort O(n*n) ex- 2,3,1,5  one ko uthayega aur apni place par insert kar dega
+// insertion sort O(n*n) ex- 2,3,1,5  one ko uthayega aur apni place par insert kar dega
+
+// quick sort(piovot) and merge sort(hypotentical division)    ----->nlogn 
