@@ -210,4 +210,217 @@
 
 
 
-  #
+#SEARCH ELEMEENT IN ROTATED SORTED ARRAY
+    // int mid=low+(high-low)/2;
+    //  if(arr[mid]==target) return mid;
+//      if(arr[low]<=arr[mid]){
+//            if(target>=arr[low]&&target<arr[mid]) {
+//             high=mid-1;
+//            }
+//            else{
+//             low=mid+1;
+//            }
+//         }
+//            else{
+//             if(target>arr[mid]&&target<=arr[high]){
+//                 low=mid+1;
+//             }
+//             else{
+//                 high=mid-1;
+//             }
+//         }
+//      }
+//      return -1;
+// }
+
+
+
+
+
+
+#SEARCH IN ROTATED SORTED ARRAY WITH DUPLICATE
+
+// tc=average=O(log2n) worst=O(n);
+// int rotated_array_search2(vector<int>arr,int target){
+//     int n=arr.size();
+//     int low=0; 
+//     int high=n-1;
+//     while(low<=high){
+//         int mid=low+(high-low)/2;
+//         if(arr[mid]==target)return mid;
+//         if(arr[low]==arr[mid]&&arr[mid]==arr[high]){
+//             low++;
+//             high--;
+//             continue;
+//         }
+//         if(arr[low]<=arr[mid]){
+//             if(target>=arr[low]&&target<arr[mid]){
+//                 high=mid-1;
+//             }
+//             else{
+//                 low=mid+1;
+//             }
+//         }
+//         else{
+//             if(target>arr[mid]&&target<=arr[high]){
+//                 low=mid+1;
+//             }
+//             else{
+//                 high=mid-1;
+//             }
+//         }
+//     }
+//     return -1;
+// }
+
+
+
+#MINIMUM IN ROTATED SORTED ARRAY
+
+// int  minimum _in_sorted_rotated_array(vector<int>arr){
+//     int n=arr.size();
+//     int low=0;
+//     int high=n-1;
+//     int ans=INT_MAX;
+//     while(low<=high){
+//         int mid=low+(high-low)/2;
+//         if(arr[low]<=arr[mid]){
+//             ans=min(ans,arr[low]);
+//              low=mid+1;
+        
+//         }
+//         else{
+//             ans=min(ans,arr[mid]);
+//             high=mid-1;
+           
+//         }        
+//     }
+//     return ans;
+// }
+
+
+
+#HOW MANY TIMES ARRAY IS ROTATED
+
+
+// int how_many_time_array_rotated(vector<int>arr){
+//     int n=arr.size();
+//     int low=0;
+//     int high=n-1;
+//     int ans=INT_MAX;
+//     int times=-1;
+//     while(low<=high){
+//         int mid=low+(high-low)/2;
+//         if(arr[low]<=arr[mid]){
+//             if(arr[low]<ans){
+//                 ans=arr[low];
+//                   times=low;
+//             }
+//                low=mid+1;
+//         }
+//         else{
+//             if(arr[mid]<ans){
+//                 ans=arr[mid]; 
+//                 times=mid;
+//             }
+//              high=mid-1;
+//         }
+//     }
+//     return times;
+// }
+
+
+#SINGLE ELEMENT IN ARRAY
+
+// brute solution tc= O(n)
+// int single_element_in_array(vector<int> arr){
+    // int n=arr.size();
+    // if(n==1) return arr[0];
+    // for(int i=0; i<n;i++){
+    //     if(i==0){
+    //         if(arr[i]!=arr[i+1]) return arr[i];
+    //     }
+    //     else if(i==n-1){
+    //         if(arr[i]!=arr[i-1]) return arr[i];
+    //     }
+    //     else{
+    //         if(arr[i]!=arr[i-1]&&arr[i]!=arr[i+1])return arr[i];
+    //     }
+    // }
+    // return -1;
+
+
+
+    // optimal solution tc=O(logn2n);
+//     int n=arr.size();
+//     int low=1;
+//     int high=n-2;
+//     if(n==1) return arr[0];
+//     if(arr[0]!=arr[1]) return arr[0];
+//     if(arr[n-1]!=arr[n-2]) return arr[n-1];
+//     while(low<=high){
+//         int mid=low+(high-low)/2;
+//         if(arr[mid]!=arr[mid-1]&&arr[mid]!=arr[mid+1])return arr[mid];
+//         else if((mid%2==1&&arr[mid]==arr[mid-1])||
+//              (mid%2==0&&arr[mid]==arr[mid+1])) {
+//             low=mid+1;
+//         }
+//         else{
+//             high=mid-1;
+//         }
+//     }
+//     return -1;
+
+// }
+
+
+
+#PEAK ELEMENT IN ARRAY
+
+
+// int peak_element_in_array(vector<int>arr){
+    // brute tc=O(n);
+//     int n=arr.size();
+//     if(n==1) return arr[0];
+//     for(int i=0;i<n;i++){
+//         if(i==0){
+//             if(arr[i]>arr[i+1]) return arr[i];
+//         }
+//         else if(i==n-1){
+//             if(arr[i]>arr[i-1]) return arr[i];
+//         }
+//         else{
+//          if(arr[i]>arr[i-1]&&arr[i]>arr[i+1]) return arr[i];
+//         }
+//     }
+//     return -1;
+  
+// optimal solution  tc=log2n
+// int peak_element_in_array(vector<int>arr){
+
+//     int n=arr.size();
+//     int low=1;
+//     int high=n-2;
+//     if(n==1) return arr[0];
+//     if(arr[0]>arr[1]) return arr[0];
+//     if(arr[n-1]>arr[n-2]) return arr[n-1];
+//     while(low<=high){
+//      int mid=low+(high-low)/2;
+//      if(arr[mid]>arr[mid+1]&&arr[mid]>arr[mid-1]) return arr[mid];
+//      else if(arr[mid]>arr[mid-1]){
+//         low=mid+1;
+//      }
+//      else{   
+
+//         high=mid-1;
+        
+//      }
+//     }
+//     return -1;
+// }
+
+
+
+
+
+
