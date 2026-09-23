@@ -561,6 +561,57 @@
 
 
 
+#KTH ELEMENT OF TWO SORTED ARRAY
+
+
+
+// int kth_element_of_two_sorted_array(vector<int>arr1,vector<int>arr2,int k){
+//     if(arr2.size()<arr1.size()) return kth_element_of_two_sorted_array(arr2,arr1,k);
+//     int n=arr1.size();
+//     int m=arr2.size();
+//     int left=k;
+//     int high=min(k,n);
+//     int low=max(0,k-m);
+//     int l1,r1,l2,r2;
+//     while(low<=high){
+//         int cut1=(low+high)/2;
+//         int cut2=left-cut1;
+//         if(cut1==0) l1= INT_MIN;
+//         else l1=arr1[cut1-1];
+
+//         if(cut2==0) l2=INT_MIN;
+//         else l2=arr2[cut2-1];
+
+
+
+//         if(cut1==n) r1=INT_MAX;
+//         else r1=arr1[cut1];
+
+//         if(cut2==m) r2=INT_MAX;
+//         else r2=arr2[cut2];
+
+//         if(l1<r2&&l2<r1){
+//             return max(l1,l2);
+//         }`
+//         else if(l1>r2){
+//             high=cut1-1;
+//         }
+//         else{ 
+//             low=cut1+1;
+//         }
+//     }
+//     return -1;
+
+
+
+
+
+#########################################################################################################################################
+                                         GOD GIVE ME EVERYTHING
+#########################################################################################################################################
+
+
+
 
 
 
