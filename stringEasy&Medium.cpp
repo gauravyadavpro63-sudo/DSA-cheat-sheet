@@ -341,3 +341,69 @@ MAX NO OF NESTED PARANTHISIS
     //     ans++;
 
     // return ans;
+
+
+
+    SUM OF BEAUTY OF ALL SUBSTRING(max freq-min freq of all subarray)
+
+
+    //     int beautySum(string s) {
+    //     int n=s.size();
+    //     int ans=0;
+    //     for(int i=0;i<n;i++){
+    //         unordered_map<char,int>mpp;
+    //         for(int j=i;j<n;j++){
+    //             mpp[s[j]]++;
+
+    //             int maxi=INT_MIN;
+    //             int mini=INT_MAX;
+    //             for(auto it:mpp){
+    //                 maxi=max(maxi,it.second);
+    //                 mini=min(mini,it.second);
+    //             }
+    //             ans+=maxi-mini;
+    //         }
+    //     }
+    //     return ans;
+    // }
+
+
+
+    #REVERSE SENTENCE
+
+
+    
+// string reverseWords(string s) {
+//     vector<string> words;
+//     string word = "";
+
+//     // Extract each word
+//     for (char ch : s) {
+//         if (ch != ' ') {
+//             word += ch;
+//         }
+//         else if (!word.empty()) {
+//             words.push_back(word);
+//             word = "";
+//         }
+//     }
+
+//     // Add the last word
+//     if (!word.empty()) {
+//         words.push_back(word);
+//     }
+
+//     // Build answer in reverse order
+//     string ans = "";
+
+//     for (int i = words.size() - 1; i >= 0; i--) {
+//         ans += words[i];
+
+//         if (i != 0) {
+//             ans += ' ';
+//         }
+//     }
+
+//     return ans;
+// }
+// ```
