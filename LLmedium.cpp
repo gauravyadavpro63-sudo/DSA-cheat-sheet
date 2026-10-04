@@ -598,4 +598,192 @@ node* intersection_point_of_y_ll(node* head1,node* head2){
 //         }
 //         return tempa;
 
-}
+// }
+
+
+#ADD ONE NUMBER TO NUMBER REPRESENTED BY LL
+
+
+
+// node* reverse(node* head){
+//     if(head==NULL||head->next==NULL) return head;
+//     node* temp=head;
+//     node* back=NULL;
+//     while(temp){
+//         node* next=temp->next;
+//         temp->next=back;
+//         back=temp;
+//         temp=next;
+
+//     }
+//     return back;
+// }
+// int carry(node* head){
+//  if(head==NULL) return 1;
+//  int cary=carry(head->next);
+// head->data=head->data+cary;
+// if(head->data<10){
+//     return 0;
+// }
+// else{
+//     head->data=0;
+//     return 1;
+
+// }
+// }
+
+// node* add_one_to_number_represented_by_ll(node* head){
+    // brute force solution tc=O(3n) sc=O(1);
+    // head=reverse(head);
+    // node* temp=head;
+    // while(temp){
+    //     temp->data=temp->data+1;
+    //     if(temp->data==10){
+    //         temp->data=0;
+    //         temp=temp->next;
+    //     }
+    //     else{
+    //        head=  reverse(head);
+    //        return head;
+
+    //     }
+    // }
+    // node* box= new node(1,nullptr);
+    // head=reverse(head);
+    //  box->next=head;
+    //  return box;
+   //striver standard solution for brute force
+    //    node* temp = head;
+    // int carry = 1;
+
+    // while(temp){
+    //     temp->data = temp->data + carry;
+
+    //     if(temp->data < 10){
+  
+
+    // optimal solution tc=O(1) sc=O(n) {recursive stack space};
+//     int cary= carry(head);
+//     if(cary==0) return head;
+//     else{
+//         node* box=new node(1,nullptr);
+//         box->next=head;
+//         return box;
+//     }
+// }
+    
+
+
+#ADD TWO NUMBER REPRESENTED BY LL
+
+
+
+// node* add_two_no_represented_by_ll(node* head1,node*head2){
+//     node* dummy=new node(-1,nullptr);
+//     node* temp=dummy;
+//     int carry=0;
+//     while(head1!=NULL||head2!=NULL||carry!=0){
+//         int sum=0;
+//         if(head1){
+//         sum+=head1->data;
+//         head1=head1->next;
+//         }
+//         if(head2){
+//             sum+=head2->data;
+//             head2=head2->next;
+//         }
+//         sum+=carry;
+//         int sumvalue=sum%10;
+//          carry=sum/10;
+//         node* box=new node(sumvalue,nullptr);
+//         temp->next=box;
+//         temp=temp->next;
+//     }
+//     return dummy->next;
+
+// }
+
+
+#REVERSE LL IN GROUP OF GIVEN SIZE K
+
+
+// node* node_at_k(node* head,int k){
+//     k--;
+//     while(head!=NULL&&k>0){
+//         k--;
+//         head=head->next;
+//     }
+//     return head;
+// }
+// node* reverse_ll_in_group_of_given_size_k(node* head, int k) {
+
+//     node* temp = head;
+//     node* previousnode = NULL;
+
+//     while (temp) {
+
+//         node* kthnode = node_at_k(temp, k);
+
+//         // If fewer than k nodes are left
+//         if (kthnode == NULL) {
+//             if (previousnode) {
+//                 previousnode->next = temp;
+//             }
+//             break;
+//         }
+
+//         // Save the next group
+//         node* nextnode = kthnode->next;
+
+//         // Disconnect current group
+//         kthnode->next = NULL;
+
+//         // Reverse current group
+//         reverse(temp);
+
+//         // Connect reversed group
+//         if (head == temp) {
+//             head = kthnode;
+//         } else {
+//             previousnode->next = kthnode;
+//         }
+
+//         // temp becomes the last node of the reversed group
+//         previousnode = temp;
+
+//         // Move to next group
+//         temp = nextnode;
+//     }
+
+//     return head;
+// }
+
+
+
+#ROTATE LL BY K TIMES
+
+
+
+// node* rotate_ll_by_k_times(node* head,int k){
+//     int length=1; node* tail=head;
+//     while(tail->next!=NULL){
+//         length++;
+//         tail=tail->next;
+//     }
+//     int r=k%length;
+//     if(r==0) return head;
+//      tail->next=head;
+//     int nthnode=length-r;
+//     nthnode--;
+//     node* temp=head;
+//     while(temp&&nthnode>0){
+//         temp=temp->next;
+//         nthnode--;
+//     }
+//     head=temp->next;
+//     temp->next=NULL;
+//     return head;
+    
+// }
+
+
