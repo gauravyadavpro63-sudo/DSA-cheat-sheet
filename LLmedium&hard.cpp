@@ -787,3 +787,126 @@ node* intersection_point_of_y_ll(node* head1,node* head2){
 // }
 
 
+
+
+#FLATTERING OF LL
+
+
+
+// node* mergenode(node* lasthead,node* head){
+//     node* dummy=new node(-1,nullptr);
+//     node* temp=dummy;
+//     while(lasthead!=NULL&&head!=NULL){
+//          if(lasthead->data<head->data){
+//            temp->child=lasthead;
+//            lasthead=lasthead->child;
+//            temp=temp->child;
+//          }
+//          else{
+//             temp->child=head;
+//             head=head->child;
+//             temp=temp->child;
+//          }
+//          temp->next=nullptr;
+    
+//     }
+//              if(head){
+//             temp->child=head;
+//          }
+//          else{
+//             temp->child=lasthead;
+//          }
+//     return dummy->child;
+// }
+// node* flattering_of_ll(node* head){
+    //  brute force Total: O(N log N) time, O(N) extra space. where n is total number of nodes
+//     vector<int>arr;
+//     node* temp=head;
+//     while(temp){
+//         node* t2=temp;
+//         while(t2!=NULL){
+//             arr.push_back(t2->data);
+//             t2=t2->child;
+//         }
+        
+//         temp=temp->next;
+//     }
+//     sort(arr.begin(),arr.end());
+//     head=arr_to_ll(arr);
+//     return head;
+// optimal solution 2NM sc=O(n) recursion space
+// if(head==NULL||head->next==NULL) return head;
+// node* lasthead=flattering_of_ll(head->next);
+// return mergenode(lasthead,head);
+// }
+
+
+
+
+
+#CLONE A LL WITH RANDOM AND NEXT POINTER
+
+// node* clone_a_ll_with_random_and_next_pointer(node* head){
+    // tc=O(2n) sc=O(n)
+    // node* temp=head;
+    // unordered_map<node*,node*>mpp;
+    // while(temp){
+    //     node* copy=new node(temp->data);
+    //     mpp[temp]=copy;
+    //     temp=temp->next;
+    // }
+    // temp=head;
+    
+
+    
+//  while(temp){
+
+//     node* copy = mpp[temp];
+
+//     copy->next = mpp[temp->next];
+//     copy->random = mpp[temp->random];
+
+//     temp = temp->next;
+// }
+
+
+
+
+    // temp=head;
+    // return mpp[temp];
+    // optimal solution  tc=O(3n) sc=O(1)
+//     node* temp=head;
+//     while(temp){
+//         node* copynode=new node(temp->data);
+//         copynode->next=temp->next;
+//         temp->next=copynode;
+//         temp=temp->next->next;
+
+//     }
+//     temp=head;
+//     while(temp){
+       
+//         node* copynode=temp->next;
+//         if(temp->random==NULL){
+//             copynode->random=NULL;
+//         }
+//         else{
+//         copynode->random=temp->random->next;
+//             }
+//             temp=temp->next->next;
+//     }
+//     node* dummy=new node(-1);
+//     temp=head;
+//     node* mover=dummy;
+//     while(temp){
+//       mover->next=temp->next;
+//       temp->next=temp->next->next;
+//       mover=mover->next;
+//       temp=temp->next;
+//     }
+//     return dummy->next;
+    
+// }
+
+
+
