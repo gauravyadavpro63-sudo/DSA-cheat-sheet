@@ -384,3 +384,71 @@
 //         cout<<endl;
 //     }
 // }
+
+
+
+#FIND THE SUM OF EVERY POSSIBLE SUBSET OF THE ARRAY AND PRINT ALL THE SUBSET SULMS
+
+// void solve(vector<int>arr,vector<int>&ans,int sum,int index){
+//     if(index==arr.size()){
+//         ans.push_back(sum);
+//         return;
+//     }
+//     solve(arr,ans,sum+arr[index],index+1);
+//     solve(arr,ans,sum,index+1);
+// }
+// void sum_of_all_subset(vector<int>arr){
+    // brute force  O(2^n)*n
+    // int n=arr.size();
+    // vector<int>ans;
+    // for(int i=0;i<(1<<n);i++){
+    //     int sum=0;
+    //  for(int index=0;index<n;index++){
+    //     if(i&(1<<index)){
+    //         sum+=arr[index]; 
+    //     }
+    //  }
+    //  ans.push_back(sum);
+    // }
+    // for(auto it:ans){
+    //     cout<<it<<" ";
+    // }
+    // optimal solution O((2^n))
+    // vector<int>ans;
+    // int index=0;
+    // int sum=0;
+    // solve(arr,ans,sum,index);
+    //   sort(ans.begin(),ans.end());
+    // for(auto it:ans){
+    //     cout<<it<<" ";
+    // }
+// }
+
+
+# GENERATE ALL UNIQUE SUBSET
+
+
+// void solving(vector<int>nums,vector<vector<int>>&ans,int index,vector<int>solve){
+//     ans.push_back(solve);
+    
+//  for(int i=index;i<nums.size();i++){
+//         if(i>index&&nums[i]==nums[i-1]){
+//             continue;
+//         }
+//         solve.push_back(nums[i]);
+//         solving(nums,ans,i+1,solve);
+//         solve.pop_back();
+//     }
+// }
+// void sum_of_all_subsetII(vector<int>nums){
+// // brute (set use kar lo);
+//     // optimal
+//     sort(nums.begin(),nums.end());
+//     vector<vector<int>>ans;
+//     int index=0;
+//     vector<int>solve;
+//     solving(nums,ans,index,solve);
+    
+
+
+
