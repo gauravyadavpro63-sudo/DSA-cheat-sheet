@@ -362,4 +362,86 @@ solve(0, "applepen")
 //     return false;
 // }
 
+#SODOCU SOLVER
 
+// O(9^E), where E is the number of empty cells.\
+O(E) due to the recursion stack. Since Sudoku has a fixed size (9×9), this becomes O(1).
+//    bool solving(vector<vector<char>>& board,int rows,int columns){
+//     for(int i=0;i<rows;i++){
+//         for(int j=0;j<columns;j++){
+//             if(board[i][j]=='.'){
+//                 for(char a='1';a<='9';a++){
+//                     if(valid(board,i,j,a)==true){
+//                         board[i][j]=a;
+//                         if(solving(board,rows,columns)==true){
+//                             return true;
+//                         }
+//                         board[i][j]='.';
+                        
+//                     }
+//                 }
+//                 return false;
+//             }
+//         }
+//     }
+//     return true;
+//    }
+//    bool valid(vector<vector<char>>&board,int rows,int columns,char a){
+//     for(int i=0;i<9;i++){
+//         if(board[rows][i]==a) return false;
+//         if(board[i][columns]==a) return false;
+//         if(board[3*(rows/3)+i/3][3*(columns/3)+i%3]==a) return false;
+//     }
+//     return true;
+//    }
+
+
+
+#EXPRESSION ADD OPERATOR
+
+    void solve(string &num,int &target,int index,vector<string>&ans,string expression,long long currentvalue,long long previousnum){
+        //base condition
+        if(index==num.size()){
+            if(currentvalue==target){
+                ans.push_back(expression);
+            }
+            return;
+        }
+        long long currentnum=0;
+        for(int i=index;i<num.size();i++){
+
+            if(i>index&&num[index]=='0'){
+                break;
+            }
+            currentnum=currentnum*10+num[i]-'0';
+            string currentstring=num.substr(index,i-index+1);
+
+            if(index==0){
+                solve(num,target,i+1,ans,currentstring,currentnum,currentnum);
+            }
+            else{
+                //+
+                solve(num,target,i+1,ans,expression + "+" + currentstring,currentvalue+currentnum,currentnum);
+                //-
+                solve(num,target,i+1,ans,expression + "-" +currentstring,currentvalue-currentnum,-currentnum);
+                //*
+                solve(num,target,i+1,ans,expression + "*" +currentstring,currentvalue-previousnum+previousnum*currentnum,previousnum*currentnum);
+            }
+
+        }
+    }
+    vector<string> addOperators(string num, int target) {
+        vector<string>ans;
+        int index=0;
+        string expression="";
+        long long currentvalue=0;
+        long long previousnum=0;
+        solve(num,target,index,ans,expression,currentvalue,previousnum);
+        return ans;
+    }
+
+
+
+########################################################################################################################
+                                  GOD GIVE ME EVERYTHING
+###########################################################################################################################
