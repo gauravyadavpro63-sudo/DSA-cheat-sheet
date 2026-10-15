@@ -230,3 +230,136 @@
     // return ans;
 
 // }
+
+#RAT IN MAZE
+
+
+// void solve(int row,int column,vector<string>&ans,vector<vector<int>>&maze,vector<vector<int>>&visited,int n,string s){
+// if(row==n-1&&column==n-1){
+//     ans.push_back(s);
+//     return;
+// }
+// //downward
+// if(row+1<n&&visited[row+1][column]!=1&&maze[row+1][column]!=0){
+//     s.push_back('D');
+//     visited[row][column]=1;
+//     solve(row+1,column,ans,maze,visited,n,s);
+//     s.pop_back();
+//     visited[row][column]=0;
+// }
+// //left
+// if(column-1>=0&&visited[row][column-1]!=1&&maze[row][column-1]!=0){
+//     s.push_back('L');
+//     visited[row][column]=1;
+//     solve(row,column-1,ans,maze,visited,n,s);
+//     visited[row][column]=0;
+//     s.pop_back();
+// }
+// //right
+// if(column+1<n&&visited[row][column+1]!=1&&maze[row][column+1]!=0){
+//   s.push_back('R');
+//   visited[row][column]=1;
+//   solve(row,column+1,ans,maze,visited,n,s);
+//   visited[row][column]=0;
+//   s.pop_back();
+// }
+// //up
+// if(row-1>=0&&visited[row-1][column]!=1&&maze[row-1][column]!=0){
+//     s.push_back('U');
+//     visited[row][column]=1;
+//     solve(row-1,column,ans,maze,visited,n,s);
+//     visited[row][column]=0;
+//     s.pop_back();
+// }
+// }
+// tc
+// 4 × 4 × 4 × ... (n² times)  O(4^(n²))
+// sc 
+// Visited Matrix  = O(n²)
+// Recursion Stack = O(n²)
+// Path String     = O(n²)
+
+// = 4^(n²)
+// vector<string> rate_in_maze(vector<vector<int>>maze,int n){
+//       vector<string>ans;
+//       string s;
+//       vector<vector<int>>visited(n,vector<int>(n,0));
+//       int row=0;
+//       int column=0;
+//       if(maze[row][column]==0) return ans;
+//       solve(row,column,ans,maze,visited,n,s);
+//       return ans;
+
+// }
+
+
+
+
+solve(0, "applepen")
+│
+├── "app" ✓
+│   └── solve(3, "lepen")
+│       │
+│       └── "le" ✓
+│           └── solve(5, "pen")
+│               │
+│               └── "pen" ✓
+│                   └── solve(8, "")
+│                       └── return true ✓
+│
+
+#WORD BREAK
+
+// tc=n*2^n worst
+// bool solve(unordered_set<string>&dictionary,string &word,int index){
+//     if(index==word.size()) return true;
+//     string box="";
+//     for(int i=index;i<word.size();i++){
+//          box.push_back(word[i]);
+//          if(dictionary.find(box)!=dictionary.end()){
+//             if(solve(dictionary,word,i+1)){
+//                 return true;
+//             }
+//          }
+//     }
+//     return false;
+// }
+// bool word_break(vector<string>dict,string word){
+//     unordered_set<string>dictionary(dict.begin(),dict.end());
+//      return solve(dictionary,word,0);
+
+// }
+
+#COLORING NODE
+
+// tc=O(node*(color^nodes))
+// sc
+// Recursion stack : O(n)
+// Color array     : O(n)
+// bool possible(bool graph[101][101],int color[],int currentnode,int node,int i){
+//     for(int k=0;k<node;k++){
+//        if(k!=currentnode&&graph[currentnode][k]!=0&&color[k]==i){
+//             return false;
+//        }
+//     }
+//     return true;
+// }
+// bool m_coloring(bool graph[101][101],int node,int color[],int currentnode,int m){
+
+//     if(currentnode==node){
+//         return true;
+//     }
+    
+//     for(int i=1;i<=m;i++){
+//         if(possible(graph,color,currentnode,node,i)==true){
+//             color[currentnode]=i;
+//             if(m_coloring(graph,node,color,currentnode+1,m)==true){
+//                 return true;
+//             }
+//             color[currentnode]=0;
+//         }
+//     }
+//     return false;
+// }
+
+
