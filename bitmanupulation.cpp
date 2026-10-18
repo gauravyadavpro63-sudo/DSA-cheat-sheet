@@ -180,8 +180,8 @@ count no of set bit
 // }
 // cout<<count;
 
- cout<<__builtin_popcount(a); stl way
- #EVEN BETTER: BRIAN KERNIGHAN'S ALGORITHM tc=O(no of set bit);
+//  cout<<__builtin_popcount(a); stl way
+//  #EVEN BETTER: BRIAN KERNIGHAN'S ALGORITHM tc=O(no of set bit);
 
 // int count=0;
 // while(a>0){
@@ -193,4 +193,92 @@ count no of set bit
 //check no is odd or not
 // return a & 1;
 // Binary of odd numbers always end with 1:
+
+#MINIMUM FLIP TO CONVERT ONE NUMBER TO ANOTHER
+
+// brute force / tc=O(31);
+// int minimum_bits_to_flip(int a,int b){
+//     int result=a^b;
+//     int count=0;
+    // for(int i=0;i<=31;i++){
+    //     if((result&(1<<i))){
+    //         count++;
+    //     }
+    // }
+    // return count;
+    // log2(a^b)  optimal solution 
+
+    // while(result){
+    //     result=result&(result-1);
+//         count++;
+//     }
+//     return count;
+// }
+
+#SINGLE NUMBER I
+
+// int single_numberI(vector<int>arr){
+//     // TC = O(n)
+//     int xorr=0;
+//     for(int i=0;i<arr.size();i++){
+//      xorr=xorr^arr[i];
+//     }
+//     return xorr;
+// }
+
+#XOR OF NUMBERS FROM RANGE 0 TO N
+
+
+// int xor_of_number_in_given_range(int n){
+    // brute solution tc=O(n) 
+    // int ans=0;
+    // for(int i=1;i<=n;i++){
+    //     ans=ans^i;
+    // }
+    // return ans;
+    
+    // optimal solution tc=O(1):
+    // if(n%4==0) return n;
+    // if(n%4==1) return 1;
+    // if(n%4==2) return n+1;
+    // if(n%4==3) return 0;
+
+// }
+
+#XOR OF NUMBERS FROM RANGE L TO R
+
+// int xor_of_number_in_given_rangeII(int l,int r){
+//     int ans=0;
+//     for(int i=l;i<=r;i++){
+//         ans=ans^i;
+//     }
+//     return ans;
+//    optimal solution
+// return xor_of_number_in_given_range(l-1)^xor_of_number_in_given_range(r);
+// }
+
+#SINGLE NUMBER III
+
+vector<int> single_numberIII(vector<int>arr){
+    // brute force kal lena yaar already kiya hai 
+    // optimaal solution tc=O(2n) sc=O(1);
+//     long long xorr=0;
+//     int b1=0;
+//     int b2=0;
+//     for(int i=0;i<arr.size();i++){
+//       xorr=xorr^arr[i];
+//     }
+//     int rightmost=(xorr&(xorr-1))^xorr;
+//     for(int i=0;i<arr.size();i++){
+//         if(arr[i]&rightmost){
+//             b1=b1^arr[i];
+//         }
+//         else{
+//             b2=b2^arr[i];
+//         }
+//     }
+//     return {b1,b2};
+// }
+
+
 
