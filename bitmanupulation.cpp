@@ -147,7 +147,7 @@
 // a=a|(1<<n);
 // cout<<a;
 
-#clear int nth bit(make it 0);
+#clear nth bit(make it 0);
 // a=a&~(1<<n)
 // cout<<a;
 
@@ -162,7 +162,7 @@ remove the last set bit
 // cout<<a;
 
 
-check if the number is power of two
+check if the number is power of two   //will have only one set bit
 // if((a&(a-1))==0) return true
 
 
@@ -171,8 +171,10 @@ count no of set bit
 // tc=log2(n)
 // int count=0;
 // while(a>0){
-//     // if(a%2==1) count++;
+//     // if(a%2==1) count++;a % 2 checks whether the number is odd. For positive integers, an odd number has a rightmost bit of 1.
 //     // a=a/2;
+
+ or
 //     count+=a&1;
 //     a=a>>1;
 // }
