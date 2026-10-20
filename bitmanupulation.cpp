@@ -281,4 +281,91 @@ vector<int> single_numberIII(vector<int>arr){
 // }
 
 
+#PRIME FACTOR OF A NUMBER
+
+// bool isprime(int n) {
+//     if (n <= 1) return false;
+
+//     for (int i = 2; i <= sqrt(n); i++) {
+//         if (n % i == 0) return false;
+//     }
+
+//     return true;
+// }
+
+// vector<int> print_prime_factor_of_number(int n) {
+//     vector<int> ans;
+
+//     for (int i = 2; i <= n; i++) {
+//         if (n % i == 0 && isprime(i)) {
+//             ans.push_back(i);
+//         }
+//     }
+
+//     return ans;
+// }
+
+
+  // better solution (bachpan wala method)   tc=O(n)
+    // vector<int>ans;
+    // for(int i=2;i<=n;i++){
+    
+    //     if(n%i==0){
+    //         ans.push_back(i);
+    //     }
+    //     while(n%i==0){
+    //         n=n/i;
+    //     }
+    // }
+    // reuturn  ans;
+
+
+    // optimal solution   O(sq(n)​+logn)=O(sq(n))
+    // vector<int>ans;
+    // for(int i=2;i<=sqrt(n);i++){
+    //     if(n%i==0){
+    //         ans.push_back(i);
+    //     }
+    //     while(n%i==0){
+    //         n=n/i;
+    //     }
+    // }
+    // if(n!=1) ans.push_back(n);
+    // return ans;
+}
+
+
+
+// Sieve approach: O(n log log n) 🚀
+void blackbox(int n,vector<int>&hash){
+ for(int i=2;i*i<=n;i++){
+     if(hash[i]==1){
+        for(int j=i*i;j<=n;j+=i){
+            hash[j]=0;
+        }
+     }
+        
+     }
+ }
+
+
+#ALL PRIME IN RANGE N
+
+vector<int> all_prime_in_range_n(int n){
+    // brute force n*sqr(n)
+    // vector<int>ans;
+  
+    // for(int i=1;i<=n;i++){
+    //     if(isprime(i)) ans.push_back(i);
+    // }
+    vector<int>ans;
+    vector<int>hash(n+1,1);
+    blackbox(n,hash);
+    for(int i=2;i<=n;i++){
+        if(hash[i]==1) ans.push_back(i);
+    }
+     
+    return ans;
+}
+
 
