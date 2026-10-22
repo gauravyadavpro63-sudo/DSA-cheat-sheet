@@ -214,3 +214,148 @@
 // };
 
 
+
+#IMPLEMENT QUEUE USING STACK
+
+
+APPROACH 1
+
+// class queuee{
+//     public:
+
+//     stack<int>st1;
+//     stack<int>st2;
+
+//     void pushh(int x){
+//         while(!st1.empty()){
+//             st2.push(st1.top());
+//             st1.pop();
+// //         }
+//         st1.push(x);
+//         while(!st2.empty()){
+//             st1.push(st2.top());
+//             st2.pop();
+//         }
+      
+//     }
+//     void pop(){
+//         if(st1.empty()) return ;
+//         st1.pop();
+//     }
+
+//     int top(){
+//         if(st1.empty()) return -1;
+//         return st1.top();
+//     }
+
+// };
+
+
+APPROACH 2
+
+
+
+//  class queuee{
+//     public:
+//     stack<int> st1;
+//     stack<int>st2;
+//     void push(int x){
+//         st1.push(x);
+//     }
+//     void pop(){
+//         if(st1.empty()&&st2.empty()){
+//          return;
+//         }
+//         if(!st2.empty()){
+//             st2.pop();
+//         }
+//         else{
+//         while(!st1.empty()){
+//              st2.push(st1.top());
+//              st1.pop();
+//         }
+//         st2.pop();
+//     }
+        
+//     }
+//     int top(){
+//         if(st1.empty()&&st2.empty()) return -1;
+//         if(!st2.empty()) return st2.top();
+//         while(!st1.empty()){
+//             st2.push(st1.top());
+//             st1.pop();
+//         }
+//         return st2.top();
+//     }
+// };
+
+
+
+
+#BALANCED PARANTHESIS
+
+
+
+// bool balanced_paranthesis(string s){
+    //     stack<char>st;
+    //     int n=s.size();
+    //     for(int i=0;i<n;i++){
+    //         if(s[i]=='('||s[i]=='['||s[i]=='{'){
+    //             st.push(s[i]);
+    //         }
+    //         else{
+    //             if(st.empty()) return false;
+    //             char c=st.top();
+    //             if((c=='('&&s[i]==')')||(c=='{'&&s[i]=='}')||(c=='['&&s[i]==']')) {
+    //                 st.pop();
+    //             }
+    //             else{
+    //                 return false;
+    //             }
+    //         }
+    
+    // }
+
+    //   if(st.empty()) return true;
+    //     else return false;
+        
+    // }
+
+
+
+    
+// optimal solution sc and tc=O(1);
+// public:
+// stack<int>st;
+// int minn=INT_MAX;
+
+// void push(int x){
+//      if(st.empty()){ 
+//         st.push(x);
+//         minn=x;
+//      }
+//      else{
+//           if(minn<x) st.push(x);
+//           else{
+//             int newx=2*x-minn;
+//             st.push(newx);
+//             minn=min(x,minn);
+//           }        
+//      }
+// }
+// void pop(){
+//     if(st.empty()) return ;
+//     int x=st.top();
+//     st.pop();
+//     if(x<minn){
+//     minn=2*minn-x;
+// }
+// }
+// int top(){
+//     if(st.top()>minn) return st.top();
+//     return minn;
+// }
+// int minstack(){
+//     return minn;
+// }
+// };
