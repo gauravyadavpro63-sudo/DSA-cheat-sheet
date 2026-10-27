@@ -300,3 +300,75 @@
 
 
 
+#ASTEROID COLLISION
+
+
+
+// list<int> asteroid_collision(vector<int>arr){
+//      int n=arr.size();
+//      list<int>ans;
+//      for(int i=0;i<n;i++){
+//            while(!ans.empty()&&arr[i]<0&&ans.back()>0&&ans.back()<abs(arr[i])){
+//             ans.pop_back();
+//            }
+//             if(arr[i]>0){
+//             ans.push_back(arr[i]);
+//            }
+//            else if(!ans.empty()&&arr[i]<0&&ans.back()==abs(arr[i])){
+//             ans.pop_back();
+//            }
+//            else if(ans.empty() || ans.back()<0){
+//                 ans.push_back(arr[i]);
+//            }
+//      }
+//      
+
+
+#SUM OF SUBARRAY RANGE
+
+
+
+
+// int sum_of_subarray_range(arr){
+//     int ans=sum_of_subarray_maximum(arr)-sum_of_subarray_minimum(arr);
+//     return ans;
+// }
+
+
+#REMOVE K DIGIT
+
+
+//   string remove_k_digit(string s,int k){
+//     sc=n tc=n
+//     stack<char>st;
+//     int n=s.size();
+//     for(int i=0;i<n;i++){
+//     while(!st.empty()&&k>0&&st.top()-'0'>s[i]-'0'){
+//         st.pop();
+//         k--;
+//     }
+//     st.push(s[i]);
+//   }
+//   string ans="";
+//   while(!st.empty()&&k>0){
+//     st.pop();
+//     k--;
+//   }
+//   if(st.empty()){
+//     return "0";
+//   }
+//   while(!st.empty()){
+//     ans+=st.top();
+//     st.pop();
+//   }
+//   while(!ans.empty()&&ans.back()=='0'){
+//     ans.pop_back();
+//   }
+//   if(ans.length()==0) return "0";
+//   else{
+//     reverse(ans.begin(),ans.end());
+//   }
+//   return ans;
+// }
+
+
