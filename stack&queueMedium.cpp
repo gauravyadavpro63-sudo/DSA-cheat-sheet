@@ -372,3 +372,77 @@
 // }
 
 
+#AREA OF LARGEST RECTANGLE IN HISTOGRAM
+
+
+
+int area_of_largest_rectangle_in_histogram(vector<int>arr){
+//     PSE calculation → O(n)
+// NSE calculation → O(n)
+// Area loop       → O(n)
+// --------------------------------
+// Total           → O(n + n + n)
+//                 → O(3n)
+//                 → O(n)
+//   vector<int>nse=next_smaller_element(arr);
+//   vector<int>pse=previous_smaller_element(arr);
+//   int n=arr.size();
+//   int area=0;
+//   for(int i=0;i<n;i++){
+//    area=max(area,(nse[i]-pse[i]-1)*arr[i]);
+//   }
+//   return area;
+// optimal solution
+// TC = O(n)
+// SC = O(n)
+// stack<int>st;
+// int n=arr.size();
+// int area=0;
+// for(int i=0;i<n;i++){
+//     while(!st.empty()&&arr[st.top()]>arr[i]){
+//         int element=st.top();
+//         st.pop();
+//         int nse=i;
+//         int pse=st.empty()?-1:st.top();
+//         area=max(area,arr[element]*(nse-pse-1));
+//     }
+//     st.push(i);
+// }
+// while(!st.empty()){
+//     int nse=n;
+//     int element=st.top();
+//     st.pop();
+//     int pse=st.empty()?-1:st.top();
+//     area=max(area,arr[element]*(nse-pse-1));
+// }
+// return area;
+// }
+
+
+
+
+
+#MAXIMUM RECTANGLE AREA
+
+
+// int maximum_rectangle_area(vector<vector<int>> arr){
+//  int area=0;
+//  int rows=arr.size();
+//  int columns=arr[0].size();
+//  vector<int>rectangle(columns,0);
+//  for(int i=0;i<rows;i++){
+//     for(int j=0;j<columns;j++){
+//       if(arr[i][j]==1){
+//         rectangle[j]+=1;
+//       }
+//         else{
+//             rectangle[j]=0;
+//         }
+
+//       }
+    
+//     area=max(area,area_of_largest_rectangle_in_histogram(rectangle));
+//  }
+//  return area;
+
+}
