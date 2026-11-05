@@ -593,3 +593,57 @@ int celebrity_problem(vector<vector<int>>matrix){
 // }
 
 
+#LRU catch
+
+
+// class LRUCache {
+// public:
+//     int capacity;
+//      list<pair<int,int>>cache;
+//     unordered_map<int,list<pair<int,int>>::iterator>mpp;
+//     LRUCache(int capacity) {
+//         this->capacity=capacity;
+//     }
+    
+//     int get(int key) {
+//         if(mpp.find(key)==mpp.end()){
+//             return -1;
+//         }
+//         else {
+//         auto it=mpp[key];
+//         cache.splice(cache.begin(),cache,it);
+//         int value=it->second;
+//         return value;
+//         }
+//     }
+    
+//     void put(int key, int value) {
+         
+//          if(mpp.find(key)!=mpp.end()){
+//             auto it=mpp[key];
+//             it->second=value;
+//             cache.splice(cache.begin(),cache,it);
+//             return ;
+
+//          }
+
+//         if(cache.size()==capacity){
+//             int lruKey=cache.back().first;
+//             mpp.erase(lruKey);
+//             cache.pop_back();
+            
+//         }
+//         cache.push_front({key,value});
+//         mpp[key]=cache.begin();
+//     }
+// };
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache* obj = new LRUCache(capacity);
+ * int param_1 = obj->get(key);
+ * obj->put(key,value);
+ */
+
+
+ 
