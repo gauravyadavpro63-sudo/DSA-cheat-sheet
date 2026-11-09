@@ -147,4 +147,141 @@
 // }
 
 
+#LONGEST REEATING CHARACTER REPLACEMENT
 
+// int longest_repeating_character_replacement(string s,int k){
+    //  brute force tc=n*n 
+    // int maxi=0;
+    // int n=s.size();
+    // for(int i=0;i<n;i++){
+    //     unordered_map<int,int>mpp;
+    //     int maxfreq=0;
+    //     for(int j=i;j<n;j++){
+    //      mpp[s[j]]++;
+    //      maxfreq=max(maxfreq,mpp[s[j]]);
+    //      int length=j-i+1;
+    //      int change=length-maxfreq;
+    //      if(change<=k){
+    //         maxi=max(maxi,length);
+    //      }       
+    //     }
+    // }
+    // return maxi;
+
+
+//   optimal solution tc=O(n) sc=O(1);
+//  int left=0;
+//  int right=0;
+//  int n=s.size();
+//  int  maxi=0;
+//  int maxifreq=0;
+//  int current=0;
+//  unordered_map<char,int>mpp;
+//  while(right<n){
+//   mpp[s[right]]++;
+//   maxifreq=max(maxifreq,mpp[s[right]]);
+//   int length=right-left+1;
+//   int change=length-maxifreq;
+//   if(change>k){
+//      mpp[s[left]]--;
+//     left++;
+//   }
+//   if(change<=k){
+//   maxi=max(maxi,length);
+
+//   }
+//   right++;
+  
+//  }   
+//  return maxi; 
+// }
+
+
+
+#BINARY SUBARRYA WITH SUM LESS THAN EQAL TO GOAL /NO OF NICE SUBARRAY
+
+// int binary_subarray_with_sum_less_than_equal_to_goal(vector<int>nums,int goal){
+//     if(goal<0) return 0;
+//  int left=0;
+//  int right=0;
+//  int count=0;
+//  int sum=0;
+//  int n=nums.size();
+//  while(right<n){
+//     sum+=nums[right];
+//     while(sum>goal){
+//         sum-=nums[left];
+//         left++;
+//     }
+//     count+=right-left+1;
+//     right++;
+//  }
+//  return count;
+// }
+// int binary_subarray_with_sum_equal_to_goal(vector<int>nums,int goal){
+// //     Time: O2*(2n)
+// // Space: O(1)
+//     return (binary_subarray_with_sum_less_than_equal_to_goal(nums, goal)-binary_subarray_with_sum_less_than_equal_to_goal(nums, goal-1));
+// }
+
+
+
+#NO OF SUBSTRING CONTAINING ALL THREE CHARACTER
+
+
+int no_of_substring_containing_all_three_character(string  s){
+    // brute force
+//     Time → O(n²)
+// Space → O(1)
+//     int count=0;
+//     int n=s.size();
+//     for(int i=0;i<n;i++){
+//      int hashmap[3]={0};
+//      for(int j=i;j<n;j++){
+//          hashmap[s[j]-'a']=1;
+//          if(hashmap[0]+hashmap[1]+hashmap[2]==3) count++ ;
+//      }
+//     }
+//     return count;
+// optimal soution space and time complexity O(n)
+
+// int n=s.size();
+// int count=0;
+// int lastseen[3]={-1,-1,-1};
+// for(int i=0;i<n;i++){
+//  lastseen[s[i]-'a']=i;
+// if(lastseen[0]!=-1&&lastseen[1]!=-1&&lastseen[2]!=-1){
+//     count+=min({lastseen[0],lastseen[1],lastseen[2]})+1;
+// }
+
+// } 
+// return count;
+// }
+
+
+
+#MAX POINT FROM CARD
+
+
+int max_point_from_card(vector<int>cardscore,int k){
+    // Time: O(k)
+// Space: O(1) 🚀
+//     int leftsum=0;
+//     int rightsum=0;
+//     int totalsum=0;
+//     int n=cardscore.size();
+//     for(int i=0;i<k;i++){
+//         leftsum+=cardscore[i];
+//     }
+//     totalsum=max(totalsum,leftsum);
+//     int adjester=1;
+//     for(int j=k-1;j>=0;j--){
+//         leftsum-=cardscore[j];
+//         rightsum+=cardscore[n-adjester];
+        
+//         totalsum=max(totalsum,leftsum+rightsum);
+//         adjester++;
+        
+//     }
+//     return totalsum;
+// }
